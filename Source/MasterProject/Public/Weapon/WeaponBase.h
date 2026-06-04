@@ -4,6 +4,9 @@
 #include "GameFramework/Actor.h"
 #include "WeaponBase.generated.h"
 
+class UPickUpComponent;
+class AMasterProjectCharacter;
+
 UCLASS()
 class MASTERPROJECT_API AWeaponBase : public AActor
 {
@@ -13,9 +16,11 @@ public:
 	
 	AWeaponBase();
 
+
 protected:
 	
 	virtual void BeginPlay() override;
+	
 
 public:	
 	

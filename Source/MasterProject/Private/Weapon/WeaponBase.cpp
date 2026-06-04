@@ -1,11 +1,14 @@
 #include "Weapon/WeaponBase.h"
+
+#include "PickUpComponent.h"
 #include "Components/ArrowComponent.h"
+#include "MasterProject/MasterProjectCharacter.h"
 
 
 AWeaponBase::AWeaponBase()
 {
  	
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 	
 	Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
 	RootComponent = Root;
@@ -27,7 +30,7 @@ AWeaponBase::AWeaponBase()
 void AWeaponBase::BeginPlay()
 {
 	Super::BeginPlay();
-	
+		
 	CurrentAmmo = MaxAmmo;
 }
 
@@ -50,3 +53,4 @@ void AWeaponBase::HandleFireDelay()
 	GetWorld()->GetTimerManager().ClearTimer(TimerFireDelay);
 	bCanFire = true;
 }
+
